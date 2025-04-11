@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.dashapp.controller.ProjectDetailController">
+
+    <top>
+        <VBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label fx:id="projectNameLabel"
+                   text="Project Title"
+                   style="-fx-font-size: 24px;" />
+            <Label fx:id="projectDescriptionLabel"
+                   text="Project Description"
+                   style="-fx-font-size: 16px;" />
+            <Label fx:id="projectManagerLabel"
+                   text="Manager: "
+                   style="-fx-font-size: 14px; -fx-font-style: italic;" />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="10" right="15" bottom="10" left="15"/>
+            </padding>
+
+            <Label text="Assigned Users"
+                   style="-fx-font-size: 14px;" />
+            <TableView fx:id="assignedUsersTable"
+                       prefHeight="200.0">
+                <columns>
+                    <TableColumn fx:id="usernameColumn"
+                                 text="Username"
+                                 prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="10" alignment="CENTER">
+            <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+                <Label text="Assign a user:"/>
+                <ComboBox fx:id="userComboBox"
+                          prefWidth="250.0"/>
+                <Button fx:id="assignButton"
+                        text="Assign"
+                        onAction="#handleAssignUser"/>
+                <Button fx:id="removeButton"
+                        text="Remove"
+                        onAction="#handleRemoveUser"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

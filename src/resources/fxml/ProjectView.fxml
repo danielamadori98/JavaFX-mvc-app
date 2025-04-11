@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.dashapp.controller.ProjectController"
+            prefWidth="600" prefHeight="360">
+
+    <children>
+
+        <TableView fx:id="projectTable"
+                   layoutX="20" layoutY="20"
+                   prefHeight="180.0" prefWidth="560.0">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="120"/>
+                <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="180"/>
+                <TableColumn fx:id="startDateColumn" text="Start Date" prefWidth="120"/>
+                <TableColumn fx:id="endDateColumn" text="End Date" prefWidth="120"/>
+            </columns>
+        </TableView>
+
+        <TextField fx:id="projectNameField"
+                   layoutX="20" layoutY="220"
+                   prefWidth="250"
+                   promptText="Enter project name"/>
+
+        <TextArea fx:id="projectDescriptionField"
+                  layoutX="290" layoutY="220"
+                  prefWidth="290" prefHeight="60"
+                  promptText="Enter project description"/>
+
+        <HBox layoutX="20" layoutY="300" spacing="20" alignment="CENTER_LEFT">
+            <Button text="Add" onAction="#handleAddProject"/>
+            <Button fx:id="completeButton"
+                    text="Mark as Completed"
+                    onAction="#handleMarkAsCompleted"/>
+            <Button text="Delete" onAction="#handleDeleteProject"/>
+        </HBox>
+
+    </children>
+</AnchorPane>
